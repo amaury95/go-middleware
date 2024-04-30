@@ -8,11 +8,11 @@ package transactionv1
 
 import (
 	context "context"
+	v1 "github.com/amaury95/go-middleware/domain/common/v1"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
 	emptypb "google.golang.org/protobuf/types/known/emptypb"
-	v1 "middleware.go/domain/common/v1"
 )
 
 // This is a compile-time assertion to ensure that this generated file

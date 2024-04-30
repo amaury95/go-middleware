@@ -3,8 +3,8 @@ package transaction
 import (
 	"context"
 
-	commonv1 "middleware.go/domain/common/v1"
-	transactionv1 "middleware.go/domain/transaction/v1"
+	commonv1 "github.com/amaury95/go-middleware/domain/common/v1"
+	transactionv1 "github.com/amaury95/go-middleware/domain/transaction/v1"
 	"google.golang.org/protobuf/types/known/emptypb"
 )
 

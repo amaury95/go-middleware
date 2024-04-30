@@ -1,4 +1,4 @@
-module middleware.go
+module github.com/amaury95/go-middleware
 
 go 1.22.2
 

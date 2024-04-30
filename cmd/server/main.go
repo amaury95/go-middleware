@@ -4,9 +4,9 @@ import (
 	"context"
 	"net/http"
 
+	transactionv1 "github.com/amaury95/go-middleware/domain/transaction/v1"
+	"github.com/amaury95/go-middleware/internal/transaction/v1"
 	"github.com/grpc-ecosystem/grpc-gateway/v2/runtime"
-	transactionv1 "middleware.go/domain/transaction/v1"
-	"middleware.go/internal/transaction/v1"
 )
 
 func main() {
