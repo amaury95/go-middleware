@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+package transaction.v1;
+
+import "google/api/annotations.proto";
+import "google/protobuf/empty.proto";
+import "common/v1/response.proto";
+
+message Transaction {
+  // ...
+
+  // oneof payload {
+  //    ...
+  // }
+}
+
+service TransactionService {
+  rpc Ping(google.protobuf.Empty) returns (common.v1.BoolResponse) {
+    option (google.api.http) = {
+      get : "/v1/transaction/ping"
+    };
+  }
+  rpc Submit(SubmitRequest) returns (SubmitResponse) {
+    option (google.api.http) = {
+      post : "/v1/transaction/submit"
+      body : "*"
+    };
+  }
+}
+
+message SubmitRequest {
+  string from = 1;
+  string contract = 2;
+  Transaction transaction = 3;
+}
+message SubmitResponse {
+  optional string hash = 1;
+  optional string reject_reason = 2;
+}

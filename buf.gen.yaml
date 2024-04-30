@@ -1,0 +1,27 @@
+version: v1
+managed:
+  enabled: true
+  go_package_prefix:
+    default: middleware.go/domain
+    except:
+      - buf.build/googleapis/googleapis
+      - buf.build/grpc-ecosystem/grpc-gateway
+plugins:
+  - plugin: go
+    out: domain
+    opt: paths=source_relative
+  - plugin: go-grpc
+    out: domain
+    opt: paths=source_relative
+  - plugin: buf.build/bufbuild/validate-go
+    opt: paths=source_relative
+    out: domain
+  - plugin: buf.build/grpc-ecosystem/gateway
+    out: domain
+    opt: paths=source_relative
+  - plugin: openapiv2
+    out: domain
+    strategy: all
+    opt:
+      - allow_merge=true
+      - merge_file_name=public
